@@ -10,7 +10,7 @@ AFRAME.registerComponent('poster', {
             {id:"Avengers",url:"./assets/Avengers.webp",title:"Avengers"},
             {id:"Spiderdad",url:"./assets/Spiderdad.jpg",title:"Spiderdad"},
             {id:"Spiderman",url:"./assets/Spiderman.jpg",title:"Spiderman"},
-            {id:"Superman",url:"./assets/Spiderman.jpg",tile:"Superman"}
+            {id:"Superman",url:"./assets/Superman.jpeg",tile:"Superman"}
         ]
         var position = -14
 
@@ -35,8 +35,8 @@ AFRAME.registerComponent('poster', {
         var element = document.createElement("a-entity")
         element.setAttribute("id",id)
         element.setAttribute("visible",true)
-        element.setAttribute("geometry",{primitive:"ring",radiusInner:1.9,radiusOuter:2})
-        element.setAttribute("material",{color:"black",opacity:1})
+        element.setAttribute("geometry",{primitive:"plane",width:2.2,height:2.3})
+        element.setAttribute("material",{color:"black",opacity:0.1})
         element.setAttribute("position",position)
         return element
     },
@@ -44,8 +44,8 @@ AFRAME.registerComponent('poster', {
     createCardImage:function(item){
         var element = document.createElement("a-entity")
         element.setAttribute("visible",true)
-        element.setAttribute("geometry",{primitive:"circle",radius:2})
-        element.setAttribute("material",{src:item.url})
+        element.setAttribute("geometry",{primitive:"plane",height:2.1,width:2})
+        element.setAttribute("material",{src:item.url,opacity:1})
         return element
     },
 });
